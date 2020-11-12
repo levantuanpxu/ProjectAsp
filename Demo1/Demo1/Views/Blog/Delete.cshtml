@@ -1,5 +1,7 @@
 ﻿@model Blog
-
+@{
+    Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
 <form method="post" asp-action="DeleteProduct">
     <input asp-for="Id" hidden />
     <div class="border">
