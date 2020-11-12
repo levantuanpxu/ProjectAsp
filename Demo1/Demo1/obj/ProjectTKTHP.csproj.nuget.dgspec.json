@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C# Web\\Demo1\\Demo1\\ProjectTKTHP.csproj": {}
+    "C:\\Users\\LOVE\\Desktop\\ProjectTKTHP\\Demo1\\ProjectTKTHP.csproj": {}
   },
   "projects": {
-    "D:\\C# Web\\Demo1\\Demo1\\ProjectTKTHP.csproj": {
+    "C:\\Users\\LOVE\\Desktop\\ProjectTKTHP\\Demo1\\ProjectTKTHP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C# Web\\Demo1\\Demo1\\ProjectTKTHP.csproj",
+        "projectUniqueName": "C:\\Users\\LOVE\\Desktop\\ProjectTKTHP\\Demo1\\ProjectTKTHP.csproj",
         "projectName": "ProjectTKTHP",
-        "projectPath": "D:\\C# Web\\Demo1\\Demo1\\ProjectTKTHP.csproj",
+        "projectPath": "C:\\Users\\LOVE\\Desktop\\ProjectTKTHP\\Demo1\\ProjectTKTHP.csproj",
         "packagesPath": "C:\\Users\\LOVE\\.nuget\\packages\\",
-        "outputPath": "D:\\C# Web\\Demo1\\Demo1\\obj\\",
+        "outputPath": "C:\\Users\\LOVE\\Desktop\\ProjectTKTHP\\Demo1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\LOVE\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -10,7 +10,7 @@ namespace Demo1.ViewsModels
     public class HomeIndexVM
     {
  
-        public List<Product> Products { get; set; }
+        public List<Blog> Blogs { get; set; }
         public IEnumerable<Category> Categories { get; set; }
   
 }

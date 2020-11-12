@@ -14,7 +14,7 @@ namespace Demo1.Models
         }
 
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Product> Products { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
         public DbSet<Tag> Tags { get; set; }
 
 
@@ -22,62 +22,62 @@ namespace Demo1.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, CategoryName = "Gạo" });
-            modelBuilder.Entity<Category>().HasData(new Category { Id = 2, CategoryName = "Thịt" });
-            modelBuilder.Entity<Category>().HasData(new Category { Id = 3, CategoryName = "Hoa Quả" });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 1, CategoryName = "Travel" });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 2, CategoryName = "Product" });
+            modelBuilder.Entity<Category>().HasData(new Category { Id = 3, CategoryName = "Resaurant food" });
 
-            modelBuilder.Entity<Product>().HasData(new Product
+            modelBuilder.Entity<Blog>().HasData(new Blog
             {
                 Id = 1, 
-                Name = "Bảo Vệ Động Vật", 
-                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", 
-                Price=15.5M, 
-                Stock=500, 
+                Title = "Bảo Vệ Động Vật", 
+                Short_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", 
+                Full_content= "Lorem Ipsum is simply dummy text of the printing and typesetting industry.", 
+              // Publish_date="200-10-20", 
                 ImageUrl= "https://img.lovepik.com/photo/50075/7988.jpg_wh860.jpg",
                 CategoryId=1
             });
-            modelBuilder.Entity<Product>().HasData(new Product
+            modelBuilder.Entity<Blog>().HasData(new Blog
             {
                 Id = 2,
-                Name = "Bảo Vệ Động Vật Qúy",
-                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                Price = 15.5M,
-                Stock = 500,
-                ImageUrl = "https://chosinhvatcanh.net/wp-content/uploads/2016/06/nhung-dong-vat-co-kha-nang-bong-dung-gay-hoa-cho-con-nguoi.jpg",
+                Title = "Bảo Vệ Động Vật",
+                Short_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                Full_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                // Publish_date="200-10-20", 
+                ImageUrl = "https://img.lovepik.com/photo/50075/7988.jpg_wh860.jpg",
                 CategoryId = 2
             });
-            modelBuilder.Entity<Product>().HasData(new Product
+            modelBuilder.Entity<Blog>().HasData(new Blog
             {
                 Id = 3,
-                Name = "Gạo Lào",
-                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                Price = 15.5M,
-                Stock = 500,
-                ImageUrl = "https://acecookvietnam.cdn.vccloud.vn/wp-content/uploads/2017/07/590-HH-TCC.png",
+                Title = "Bảo Vệ Động Vật",
+                Short_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                Full_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                // Publish_date="200-10-20", 
+                ImageUrl = "https://img.lovepik.com/photo/50075/7988.jpg_wh860.jpg",
                 CategoryId = 1
             });
-            modelBuilder.Entity<Product>().HasData(new Product
+            modelBuilder.Entity<Blog>().HasData(new Blog
             {
                 Id = 4,
-                Name = "Mít trộn Huế",
-                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                Price = 15.5M,
-                Stock = 500,
-                ImageUrl = "https://acecookvietnam.cdn.vccloud.vn/wp-content/uploads/2017/07/590-HH-TCC.png",
+                Title = "Bảo Vệ Động Vật",
+                Short_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                Full_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                // Publish_date="200-10-20", 
+                ImageUrl = "https://img.lovepik.com/photo/50075/7988.jpg_wh860.jpg",
                 CategoryId = 3
             });
-            modelBuilder.Entity<Product>().HasData(new Product
+            modelBuilder.Entity<Blog>().HasData(new Blog
             {
                 Id = 5,
-                Name = "Gạo Thơm xứ Quảng",
-                Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-                Price = 15.5M,
-                Stock = 500,
-                ImageUrl = "https://acecookvietnam.cdn.vccloud.vn/wp-content/uploads/2017/07/590-HH-TCC.png",
-                CategoryId = 1
+                Title = "Bảo Vệ Động Vật",
+                Short_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+                Full_content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                // Publish_date="200-10-20", 
+                ImageUrl = "https://img.lovepik.com/photo/50075/7988.jpg_wh860.jpg",
+                CategoryId = 3
             });
 
-            modelBuilder.Entity<ProductTag>().HasKey(protag => new { protag.ProductId, protag.TagId });
+            modelBuilder.Entity<BlogTag>().HasKey(protag => new { protag.BlogId, protag.TagId });
             //seeder data tag
             modelBuilder.Entity<Tag>().HasData(new Tag
             {

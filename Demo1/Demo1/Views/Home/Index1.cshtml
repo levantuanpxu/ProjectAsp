@@ -10,13 +10,13 @@
     </div>
 
     <div class="row mt-5">
-        @foreach (var item in Model.Products)
+        @foreach (var item in Model.Blogs)
         {
             <div class="col-md-6 pb-4 filter @item.Category.CategoryName">
                 <div class="card bg-white rounded shadow-sm">
                     <div class="card-body row">
-                        <div class="col-7"><label>@item.Name</label></div>
-                        <div class="col-5"><label>@string.Format("{0:c0}", item.Price)</label></div>
+                        <div class="col-7"><label>@item.Title</label></div>
+                        <div class="col-5"><label>@string.Format("{0:c0}", item.Short_content)</label></div>
                     </div>
                     <img src="@CommonDefault.ImagePath@item.ImageUrl" alt="Alternate Text" class="card-img-top img-fluid d-block mx-auto mb-3" />
                     <div class="card-body row">

@@ -8,9 +8,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Demo1.ViewsModels
 {
-    public class ProductCreateVM
+    public class BlogCreateVM
     {
-        public Product Product { get; set; }
+        public Blog Blog { get; set; }
         public IEnumerable<SelectListItem> CategorySelectList { get; set; }
     }
 }

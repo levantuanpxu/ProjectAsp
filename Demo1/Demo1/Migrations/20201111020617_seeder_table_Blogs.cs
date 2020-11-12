@@ -2,7 +2,7 @@
 
 namespace Demo1.Migrations
 {
-    public partial class seeder_table_Product : Migration
+    public partial class seeder_table_Blogs : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

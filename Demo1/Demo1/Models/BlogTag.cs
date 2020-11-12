@@ -1,10 +1,10 @@
 ﻿namespace Demo1.Models
 {
-    public class ProductTag
+    public class BlogTag
     {
-        public int ProductId { get; set; }
+        public int BlogId { get; set; }
         public int TagId { get; set; }
-        public Product Product { get; set; }
+        public Blog Blog { get; set; }
         public Tag Tag { get; set; }
     }
 }

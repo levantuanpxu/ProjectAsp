@@ -18,7 +18,7 @@ namespace Demo1.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Category> categories = _appDbContext.Categories.Include(p => p.Products);
+            IEnumerable<Category> categories = _appDbContext.Categories.Include(p => p.Blogs);
             return View(categories);
         }
         public IActionResult Create()

@@ -17,6 +17,6 @@ namespace Demo1.Models
         public string CategoryName { get; set; }
         [DisplayName("Mô tả thể loại")]
         public string Description { get; set; }
-        public List<Product> Products { get; set; }
+        public List<Blog> Blogs { get; set; }
     }
 }

@@ -8608,11 +8608,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\C# Web\\Demo1\\Demo1\\ProjectTKTHP.csproj",
-      "projectName": "ProjectTKTHP",
-      "projectPath": "D:\\C# Web\\Demo1\\Demo1\\ProjectTKTHP.csproj",
+      "projectUniqueName": "C:\\Users\\LOVE\\Desktop\\ProjectAsp.net\\Demo1\\Demo1.csproj",
+      "projectName": "Demo1",
+      "projectPath": "C:\\Users\\LOVE\\Desktop\\ProjectAsp.net\\Demo1\\Demo1.csproj",
       "packagesPath": "C:\\Users\\LOVE\\.nuget\\packages\\",
-      "outputPath": "D:\\C# Web\\Demo1\\Demo1\\obj\\",
+      "outputPath": "C:\\Users\\LOVE\\Desktop\\ProjectAsp.net\\Demo1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LOVE\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -15,12 +15,12 @@ using Microsoft.EntityFrameworkCore;
 namespace Demo1.Controllers
 {
    
-        public class ProductController : Controller
+        public class BlogController : Controller
         {
             private readonly AppDbContext _appDbContext;
             private readonly IWebHostEnvironment _webHostEnvironment;
 
-            public ProductController(AppDbContext appDbContext, IWebHostEnvironment webHostEnvironment)
+            public BlogController(AppDbContext appDbContext, IWebHostEnvironment webHostEnvironment)
             {
                 _appDbContext = appDbContext;
                 _webHostEnvironment = webHostEnvironment;
@@ -38,16 +38,16 @@ namespace Demo1.Controllers
                     new Product {Id = 5, Name = "Bánh Tráng Trộn", Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s", Price=15.5M, Stock=500, ImageUrl="https://acecookvietnam.cdn.vccloud.vn/wp-content/uploads/2017/07/590-HH-TCC.png"}
                 };*/
 
-                var products = _appDbContext.Products.Include(p => p.Category).ToList();
+                var products = _appDbContext.Blogs.Include(p => p.Category).ToList();
 
                 return View(products);
             }
 
             public IActionResult Create()
             {
-                ProductCreateVM productVM = new ProductCreateVM()
+                BlogCreateVM productVM = new BlogCreateVM()
                 {
-                    Product = new Product(),
+                    Blog = new Blog(),
                     CategorySelectList = _appDbContext.Categories.Select(item => new SelectListItem
                     {
                         Text = item.CategoryName,
@@ -59,7 +59,7 @@ namespace Demo1.Controllers
             }
 
             [HttpPost]
-            public IActionResult Create(ProductCreateVM productCreateVM)
+            public IActionResult Create(BlogCreateVM productCreateVM)
             {
                 var files = HttpContext.Request.Form.Files;
                 string webRootPath = _webHostEnvironment.WebRootPath;
@@ -73,8 +73,8 @@ namespace Demo1.Controllers
                     files[0].CopyTo(fileStream);
                 }
 
-                productCreateVM.Product.ImageUrl = fileName + extension;
-                _appDbContext.Products.Add(productCreateVM.Product);
+                productCreateVM.Blog.ImageUrl = fileName + extension;
+                _appDbContext.Blogs.Add(productCreateVM.Blog);
                 _appDbContext.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -82,9 +82,9 @@ namespace Demo1.Controllers
 
             public IActionResult Edit(int? id)
             {
-                ProductCreateVM productVM = new ProductCreateVM()
+                BlogCreateVM productVM = new BlogCreateVM()
                 {
-                    Product = _appDbContext.Products.Find(id),
+                    Blog = _appDbContext.Blogs.Find(id),
                     CategorySelectList = _appDbContext.Categories.Select(item => new SelectListItem
                     {
                         Text = item.CategoryName,
@@ -96,12 +96,12 @@ namespace Demo1.Controllers
             }
 
             [HttpPost]
-            public IActionResult Edit(ProductCreateVM productCreateVM)
+            public IActionResult Edit(BlogCreateVM productCreateVM)
             {
                 var files = HttpContext.Request.Form.Files;
                 string webRootPath = _webHostEnvironment.WebRootPath;
 
-                var objProduct = _appDbContext.Products.AsNoTracking().FirstOrDefault(pro => pro.Id == productCreateVM.Product.Id);
+                var objProduct = _appDbContext.Blogs.AsNoTracking().FirstOrDefault(pro => pro.Id == productCreateVM.Blog.Id);
 
                 if (files.Count > 0)
                 {
@@ -114,14 +114,14 @@ namespace Demo1.Controllers
                         files[0].CopyTo(fileStream);
                     }
 
-                    productCreateVM.Product.ImageUrl = fileName + extension;
+                    productCreateVM.Blog.ImageUrl = fileName + extension;
                 }
                 else
                 {
-                    productCreateVM.Product.ImageUrl = objProduct.ImageUrl;
+                    productCreateVM.Blog.ImageUrl = objProduct.ImageUrl;
                 }
 
-                _appDbContext.Products.Update(productCreateVM.Product);
+                _appDbContext.Blogs.Update(productCreateVM.Blog);
                 _appDbContext.SaveChanges();
 
                 return RedirectToAction("Index");
@@ -134,7 +134,7 @@ namespace Demo1.Controllers
                 return NotFound();
             }
 
-            var product = _appDbContext.Products.Find(id);
+            var product = _appDbContext.Blogs.Find(id);
             if (product == null) return NotFound();
 
             return View(product);
@@ -148,10 +148,10 @@ namespace Demo1.Controllers
                 return NotFound();
             }
 
-            var product = _appDbContext.Products.Find(id);
+            var product = _appDbContext.Blogs.Find(id);
             if (product == null) return NotFound();
 
-            _appDbContext.Products.Remove(product);
+            _appDbContext.Blogs.Remove(product);
             _appDbContext.SaveChanges();
 
             return RedirectToAction("Index");

@@ -1,13 +1,13 @@
-﻿@model List<Product>
+﻿@model List<Blog>
 <div>
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Product List</h2>
+            <h2 class="text-primary">Blog List</h2>
         </div>
 
         <div class="col-6">
-            <a asp-controller="Product" asp-action="Create" class="btn btn-primary">
-                Create New Product
+            <a asp-controller="Blog" asp-action="Create" class="btn btn-primary">
+                Create New Blog
             </a>
         </div>
     </div>
@@ -18,22 +18,22 @@
             <thead>
                 <tr>
                     <th>
-                        Product Name
+                        Title Blog
                     </th>
                     <th>
-                        Description
+                        Short_content
                     </th>
                     <th>
-                        Stock
+                        Full_content
                     </th>
                     <th>
-                        Price
+                        Publish_date
                     </th>
                     <th>
                         ImageUrl
                     </th>
                     <th>
-                        CategoryId
+                        Category Name
                     </th>
                     <th>
 
@@ -41,31 +41,31 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var product in Model)
+                @foreach (var blog in Model)
                 {
                     <tr>
                         <td width="10%">
-                            @product.Name
+                            @blog.Title
                         </td>
                         <td width="10%">
-                            @product.Description
+                            @blog.Short_content
                         </td>
                         <td width="10%">
-                            @product.Stock
+                            @blog.Full_content
                         </td>
                         <td width="10%">
-                            @product.Price
+                            @blog.Publish_date
                         </td>
                         <td width="20%">
-                            <img class="img-responsive fit-image" style="width:150px;text-align:center" src="/images/@product.ImageUrl" alt="Alternate Text" />
+                            <img class="img-responsive fit-image" style="width:150px;text-align:center" src="/images/@blog.ImageUrl" alt="Alternate Text" />
                         </td>
                         <td width="10%">
-                            @product.Category.CategoryName
+                            @blog.Category.CategoryName
                         </td>
                         <td width="20%">
                             <div>
-                                <a asp-controller="Product" asp-action="Edit" asp-route-Id="@product.Id" class="btn btn-primary">Edit</a>
-                                <a asp-controller="Product" asp-action="Delete" asp-route-Id="@product.Id" class="btn btn-danger">Delete</a>
+                                <a asp-controller="Blog" asp-action="Edit" asp-route-Id="@blog.Id" class="btn btn-primary">Edit</a>
+                                <a asp-controller="Blog" asp-action="Delete" asp-route-Id="@blog.Id" class="btn btn-danger">Delete</a>
                             </div>
                         </td>
 
