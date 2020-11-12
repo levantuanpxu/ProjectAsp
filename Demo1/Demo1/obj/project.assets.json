@@ -8608,11 +8608,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LOVE\\Desktop\\ProjectAsp.net\\Demo1\\Demo1.csproj",
+      "projectUniqueName": "D:\\ProjectAsp\\ProjectAsp\\Demo1\\Demo1\\Demo1.csproj",
       "projectName": "Demo1",
-      "projectPath": "C:\\Users\\LOVE\\Desktop\\ProjectAsp.net\\Demo1\\Demo1.csproj",
+      "projectPath": "D:\\ProjectAsp\\ProjectAsp\\Demo1\\Demo1\\Demo1.csproj",
       "packagesPath": "C:\\Users\\LOVE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LOVE\\Desktop\\ProjectAsp.net\\Demo1\\obj\\",
+      "outputPath": "D:\\ProjectAsp\\ProjectAsp\\Demo1\\Demo1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LOVE\\AppData\\Roaming\\NuGet\\NuGet.Config",
