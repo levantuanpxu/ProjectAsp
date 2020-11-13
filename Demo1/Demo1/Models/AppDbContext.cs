@@ -16,6 +16,8 @@ namespace Demo1.Models
         public DbSet<Category> Categories { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Tag> Tags { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<About> Abouts { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -95,7 +97,28 @@ namespace Demo1.Models
                 Id = 3,
                 Name = "Bổ Khỏe"
             });
+            //Users
+            modelBuilder.Entity<User>().HasData(new User
+            {
+                Id = 1,
+                FullName = "Le Van Tuan",
+                UserName = "Tuan Le",
+                Password = 123456,
+               Email="levantuanpxu@gmail.com",
+                Imageurl = "2d1e4f89-3477-4bce-8203-74c6a6e89b02.jpg",
+                
+            });
+            //About
+            modelBuilder.Entity<About>().HasData(new About
+            {
+                Id = 1,
+                Title = "Le Van Tuan",
+                Shortcontent = "Tuan Le",
+              
+                Content = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+                Imageurl = "2d1e4f89-3477-4bce-8203-74c6a6e89b02.jpg",
 
+            });
         }
     }
 }
